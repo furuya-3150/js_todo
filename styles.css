@@ -1,0 +1,221 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-app {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.new-todo {
+  width: calc(100%);
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.new-todo:focus {
+  border-color: #f772e3;
+}
+
+#add-todo-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f772e3;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-todo-button:hover {
+  background-color: #fa00d4;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.todo-list .todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item span {
+  flex: 1;
+}
+
+.todo-item button {
+  background: none;
+  border: none;
+  color: #380107;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.todo-item button:hover {
+  color: #c82333;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Todoリスト全体のスタイル */
+#js-todo-list {
+  list-style-type: none;  /* リストマークを消す */
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px #0000001a;
+}
+
+/* Todoアイテムのリスト項目 */
+#js-todo-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between; /* アイテムを左右に配置 */
+  align-items: center;            /* 垂直方向を中央に揃える */
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+#js-todo-list li:last-child {
+  border-bottom: none;  /* 最後の項目はボーダーを消す */
+}
+
+/* 完了済みアイテムのスタイル */
+#js-todo-list li.completed s {
+  color: #aaa;  /* グレー色 */
+  text-decoration: line-through;
+  justify-content: space-between; /* アイテムを左右に配置 */
+  align-items: center;            /* 垂直方向を中央に揃える */
+}
+
+/* チェックボックスのスタイル */
+#js-todo-list .checkbox {
+  appearance: none; /* デフォルトのチェックボックススタイルを無効化 */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+#js-todo-list .checkbox:checked {
+  background-color: #f772e3; /* チェックボックスの背景色 */
+  border-color: #f772e3;
+}
+
+#js-todo-list .checkbox:checked::before {
+  content: '✔';
+  color: white; /* チェックマークの色 */
+  position: absolute;
+  top: 0;
+  left: 3px;
+  font-size: 16px;
+}
+
+#js-todo-list .checkbox:checked + label {
+  text-decoration: line-through;
+}
+
+/* 削除ボタンのスタイル */
+#js-todo-list .delete {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c; /* 赤色 */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 編集ボタンのスタイル */
+#js-todo-list .edit-item-button {
+  background-color: transparent;
+  margin-right: 10px; /* ボタンとのスペースを確保 */
+  border: none;
+  color: #e74c3c; /* 赤色 */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+li #update-todo {
+  width: 250px;
+  padding: 5px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+li #update-todo:focus {
+  border-color: #f772e3;
+}
+
+/* 更新ボタンのスタイル */
+li #update-todo-item {
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  color: #f772e3; /* 赤色 */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+li #update-todo-item:hover {
+  color: #fa00d4;
+}
+
+
+#js-todo-list li:hover {
+  background-color: #f1f1f1; /* ホバー時の背景色 */
+}
+
+/* アイテムのテキスト */
+#js-todo-list s, #js-todo-list span {
+  flex-grow: 1;  /* テキスト部分が広がる */
+  margin-right: 10px; /* ボタンとのスペースを確保 */
+}
