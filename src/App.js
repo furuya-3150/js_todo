@@ -11,21 +11,19 @@ export class App {
 
   handleUpdateCompleted({ id, completed }) {
     this.todoListModel.updateCompleted({
-      id: id,
-      completed: completed
+      id, completed
     })
   }
 
   handleUpdateTitle({ id, title }) {
     this.todoListModel.updateTitle({
-      id: id,
-      title: title 
+      id, title
     })
   }
 
   handleDeleteTodo({ id }) {
     this.todoListModel.deleteTodo({
-      id: id,
+      id
     })
   }
 
@@ -44,8 +42,7 @@ export class App {
       const $todoListElement = this.todoListView.createElement(todoItems, {
         onUpdateTodoCompleted: ({ id, completed }) => {
           this.handleUpdateCompleted({
-            id: id,
-            completed: completed
+            id, completed
           })
         },
         onUpdateTodoTitle: ({ id, title }) => {
@@ -56,7 +53,7 @@ export class App {
         },
         onDeleteTodo: ({ id }) => {
           this.handleDeleteTodo({
-            id: id
+            id
           });
         }
       });
